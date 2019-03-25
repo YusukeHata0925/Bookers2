@@ -1,0 +1,5 @@
+class RemovePostImageFromBooks < ActiveRecord::Migration[5.2]
+  def change
+    # remove_column :books, :shop_name, :text
+  end
+end

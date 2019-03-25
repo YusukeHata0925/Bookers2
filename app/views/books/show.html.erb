@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Show 投稿後</title>
+</head>
+
+<body>
+  <li>
+	<% if book.user == current_user %>
+    <%= link_to "削除",book_path(@book), method: :delete %>
+    <% end %>
+  </li>
+</body>

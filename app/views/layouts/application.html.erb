@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html leng="en">
   <head>
     <title>Bookers2</title>
+    <meta charset="utf-8">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +11,24 @@
   </head>
 
   <body>
+    <header class="navbar navbar-fixed-top">
+      <div class="container">
+        <nav class="nav navbar-nav navbar-left">
+          <span>Bookers</span>
+        </nav>
+        <nav>
+          <% if user_signed_in? %>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="glyphicon glyphicon-home" aria-hidden="true"> Home</a></li>
+            <li><a class="glyphicon glyphicon-user" aria-hidden="true"></a><%= link_to 'Users', user_path(current_user.id) %></li>
+            <li><a class="glyphicon glyphicon-book" aria-hidden="true"> Books</a></li>
+            <li><a class="glyphicon glyphicon-log-out logout" rel="nofollow" data-method="delete"> logout</a></li>
+           <% else %>
+            <li><a class="glyphicon glyphicon-link about"> About</a></li>
+           <% end %>
+        </nav>
     <%= yield %>
+      </div>
+    </header>
   </body>
 </html>
