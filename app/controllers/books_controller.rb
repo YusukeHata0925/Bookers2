@@ -1,7 +1,9 @@
 class BooksController < ApplicationController
 	before_action :authenticate_user!,only: [:create,:edit,:index]
   def show
-      @book = Book.find(params[:id]) 
+      @bookf = Book.find(params[:id])
+      @book = Book.new
+      @user = @bookf.user
   end
 
   def index
@@ -26,9 +28,9 @@ class BooksController < ApplicationController
   end
 
   def update
-  	  @book = Book.find(params[:id])
-      @book.update(book_params)
-      redirect_to book_show_path(@book.id)
+  	  book = Book.find(params[:id])
+      book.update(book_params)
+      redirect_to book_path(book.id)
   end
 
   def destroy
@@ -40,7 +42,7 @@ end
 
 private
     def book_params
-      params.require(:book).permit(:title, :body, :name, :profile_image)
+      params.require(:book).permit(:title, :opinion, :name, :profile_image)
     end
 
 end

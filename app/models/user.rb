@@ -6,7 +6,7 @@ class User < ApplicationRecord
          #:authentication_keys => [:username]
 
   validates :name, presence: true, length: { maximum: 20 }
-  validates :profile, presence: true, length: { maximum: 50 }
+  validates :opinion, presence: true, length: { maximum: 50 }
   # validates_uniqueness_of :name
   # validates_presence_of :name
 

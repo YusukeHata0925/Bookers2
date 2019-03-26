@@ -6,6 +6,7 @@
 
 <body>
 
+ <section>
 	<div class="profile-container">
    <div class="container">
     <div class="row">
@@ -17,7 +18,7 @@
 
 
 	      <div class="profile-container">
-            <%= attachment_image_tag @user, :profile_image, :fill, 15, 15, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>
+            <%= attachment_image_tag @user, :profile_image, :fill, 15, 15, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" :size =>'100x100'  %>
 
         </div>
 
@@ -45,7 +46,6 @@
 
         <% end %>
 
-     
      <h1>NewBook</h1>
         <!-- form_for部分 -->
         <%= form_for(@book) do |f| %>
@@ -63,5 +63,6 @@
     </div>
    </div>
   </div>
+ </section>
   </body>
 </html>  

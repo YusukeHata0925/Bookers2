@@ -1,10 +1,31 @@
-<h1>Book detail</h1>
-
 <body>
-  <li>
-	<% if @book.user == current_user %>
-	<%= link_to "Edit", edit_book_path(@book.id) %> 
-    <%= link_to "Destroy",book_path(@book), method: :delete %>
-    <% end %>
-  </li>
+<div class="container">
+ <div class="row">
+     <div class="col-xs-3">
+        <%= render 'books/list', user: current_user %>
+     </div>
+  <h1>Users</h1>
+
+  <div class="col-xs-8">
+    <h2>Book detail</h2>
+
+    <table class="table">
+    	<tbody>
+    	 <tr>
+    	 	<tb>
+                <%= attachment_image_tag @user, :profile_image, :fill, 15, 15, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg", :size =>'100x100' %>
+            </tb>
+    	 	<tb><%= @bookf.title %></tb>
+    	 	<tb><%= @bookf.opinion %></tb>
+    	 	<% if @bookf.user == current_user %>
+    	 	<tb><%= link_to "Edit", edit_book_path(@bookf.id) %> </tb>
+    	 	<tb><%= link_to "Destroy",book_path(@bookf), method: :delete %></tb>
+    	 	<% end %>
+    	 </tr>
+    	</tbody>
+    </table>
+
+  </div>
+ </div>
+</div>
 </body>
