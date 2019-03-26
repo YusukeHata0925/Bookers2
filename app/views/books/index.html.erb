@@ -13,10 +13,13 @@
 	       <%= form_for(@user) do |f| %>
          <h3>User Info</h3>
 
+         <div>
 
-	       <div>
-	          <img class="attachment user profile_image fallback">
-               <!--%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "img-circle pull-left profile-img" %-->
+
+	      <div class="profile-container">
+            <%= attachment_image_tag @user, :profile_image, :fill, 15, 15, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>
+
+        </div>
 
         <table class="table">
         <tbody>
@@ -53,7 +56,7 @@
             <h4>Opinion</h4>
             <%= f.text_area :opinion %>
  
-            <input type="submit" name="commit" value="Create Book" class="btn btn-primary col-xs-12" data-disable-with="Create Book">
+            <%= f.submit 'Create Book', class: "btn btn-primary col-xs-12" %>
  
         <% end %>
      </div>
