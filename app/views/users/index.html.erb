@@ -1,0 +1,23 @@
+<body>
+  <h1>Users</h1>
+
+  <table>
+  	<thead>
+  		<tr>
+  			<th>image</th>
+  			<th>name</th>
+  			<th></th>
+  		</tr>
+    </thead>
+  	<tbody>
+  		<% @users.each do |user| %>
+        <tr>
+          <td ><%= user.name %></td>
+          <td ><%= user.name %></td>
+          <td ><%= link_to "show", user_path(user.id), class: "show_#{user.id}" %></td>
+        </tr>
+      <% end %>
+  	</tbody>
+  </table>
+
+  </body>

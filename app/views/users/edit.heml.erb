@@ -1,0 +1,19 @@
+<h1>Userinfo</h1>
+
+<div>
+	<%= form_for(@user) do |f| %>
+    <h4>Name</h4>
+    <%= f.text_field :title %>
+    <h4>introduction</h4>
+    <%= f.label :profile %>
+      <%= f.text_area :profile,  class: 'form-control', placeholder: "50文字以内で入力" %> 
+       <%= f.submit "Update User", class:"btn btn-lg btn-block btn-base-1 mt-20" %>
+   <% end %>
+</div>
+
+<div>
+     <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
+
+      <label class="control-label sr-only" for="inputEmail">ProfileImage</label>
+      <%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-edit-form" %>
+</div>

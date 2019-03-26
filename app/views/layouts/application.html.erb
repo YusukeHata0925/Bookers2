@@ -19,13 +19,17 @@
         <nav>
           <% if user_signed_in? %>
           <ul class="nav navbar-nav navbar-right">
-            <li><a class="glyphicon glyphicon-home" aria-hidden="true"> Home</a></li>
-            <li><a class="glyphicon glyphicon-user" aria-hidden="true"></a><%= link_to 'Users', user_path(current_user.id) %></li>
-            <li><a class="glyphicon glyphicon-book" aria-hidden="true"> Books</a></li>
-            <li><a class="glyphicon glyphicon-log-out logout" rel="nofollow" data-method="delete"> logout</a></li>
-           <% else %>
+            <li><%= link_to ' Home', root_path, class: "glyphicon glyphicon-home" %></li>
+            <li><%= link_to ' User', users_path, class: "users glyphicon glyphicon-user" %></li>
+            <li><%= link_to ' Books', new_book_path, class: "glyphicon glyphicon-book"%></li>
+            <li><%= link_to ' Logout', destroy_user_session_path,method: :delete, class: "glyphicon glyphicon-log-out" %></li>
+            <% else %>
+            <li><%= link_to ' Home', root_path, class: "glyphicon glyphicon-home" %></li>
             <li><a class="glyphicon glyphicon-link about"> About</a></li>
-           <% end %>
+            <li><%= link_to 'sign up', new_user_registration_path, class: "glyphicon glyphicon-edit sign_up" %></li>
+            <li><%= link_to ' login',  new_user_session_path, class: "glyphicon glyphicon-log-in sign_in" %></li>
+            <% end %>
+          </ul>
         </nav>
     <%= yield %>
       </div>

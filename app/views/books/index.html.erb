@@ -16,29 +16,33 @@
 
 	       <div>
 	          <img class="attachment user profile_image fallback">
-               <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "img-circle pull-left profile-img" %>
+               <!--%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "img-circle pull-left profile-img" %-->
+
         <table class="table">
-          <tbody>
-          <tr></tr>
-           <tr>
-           <th><h5 class="profile-name"><%= @user.name %>name</h5></th>
+        <tbody>
+        <tr></tr>
+        <tr>
+           <th>Name <h5 class="profile-name"><%= @user.name %></h5></th>
            <th></th>
-           </tr>
-           <tr>
-           <th><h5 class="profile-name"><%= @user.name %>Introduction</h5></th>
-           <th></th>
-           </tr>
-          </tbody>
+        </tr>
+        <tr>
+           <th>Introduction <h5 class="profile-name">
+           <%= @user.profile %></h5>
+           </th>
+         </tr>
+        </tbody>
         </table>
+
           <div>
            <% if @user.id == current_user.id %>
-           <a class="col-xs-12 btn btn-default glyphicon glyphicon-wrench edit_user"></a>
+           <%= link_to "edit_user", edit_user_path(@user.id), class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench" %>
            <% end %>
-           </div>
+          </div>
         </div>
 
         <% end %>
 
+     
      <h1>NewBook</h1>
         <!-- form_for部分 -->
         <%= form_for(@book) do |f| %>
@@ -47,7 +51,7 @@
             <%= f.text_field :title %>
  
             <h4>Opinion</h4>
-            <%= f.text_area :body %>
+            <%= f.text_area :opinion %>
  
             <input type="submit" name="commit" value="Create Book" class="btn btn-primary col-xs-12" data-disable-with="Create Book">
  
