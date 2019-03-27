@@ -1,26 +1,35 @@
 <body>
-  <h1>Books/h1>
+  <div class="container">
+  <div class="row">
+    <div class="col-xs-3">
+        <%= render 'books/list', user: current_user %>
+    </div>
 
-  <table>
-  	<thead>
-
-  		<tr>
-        <th></th>
-  			<th>Title</th>
-  			<th>Opinion</th>
-  		</tr>
-    </thead>
+      <div class="col-xs-8">
+      <h1>Books</h1>
+  
+      <table class="table">
+  	    <thead>
+           <tr>
+              <th></th>
+  			      <th>Title</th>
+  			      <th>Opinion</th>
+  		    </tr>
+        </thead>
   	
-    <tbody>
-  		<% @books.each do |book| %>
-        <tr>
-          <td ><%= book.title %></td>
-          <td ><%= book.opinion %></td>
-          <td ></td>
-        </tr>
-      <% end %>
-  	</tbody>
-  </table>
+       <tbody>
+  		   <% @books.each do |book| %>
+         <tr>
+              <td><%= attachment_image_tag @user, :profile_image, :fill, 15, 15, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg", :size =>'50x50' %></td>
+              <td ><%= book.title %></td>
+              <td ><%= book.opinion %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-  </body>
+   </div>
+  </div>
+ </div>
+</body>
 </html>

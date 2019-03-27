@@ -12,14 +12,14 @@
     <table class="table">
     	<tbody>
     	 <tr>
-    	 	<tb>
+    	 	<td>
                 <%= attachment_image_tag @user, :profile_image, :fill, 15, 15, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg", :size =>'100x100' %>
-            </tb>
-    	 	<tb><%= @bookf.title %></tb>
-    	 	<tb><%= @bookf.opinion %></tb>
+            </td>
+    	 	<td><%= @bookf.title %></td>
+    	 	<td><%= @bookf.opinion %></td>
     	 	<% if @bookf.user == current_user %>
-    	 	<tb><%= link_to "Edit", edit_book_path(@bookf.id) %> </tb>
-    	 	<tb><%= link_to "Destroy",book_path(@bookf), method: :delete %></tb>
+    	 	<td><%= link_to "Edit", edit_book_path(@bookf.id) %> </td>
+    	 	<td><%= link_to "Destroy",book_path(@bookf), method: :delete %></td>
     	 	<% end %>
     	 </tr>
     	</tbody>
