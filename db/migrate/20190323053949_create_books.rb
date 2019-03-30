@@ -6,7 +6,6 @@ class CreateBooks < ActiveRecord::Migration[5.2]
       t.integer :user_id
       #t.string :category
       t.text :opinion
-
       t.timestamps
     end
   end

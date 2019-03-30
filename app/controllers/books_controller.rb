@@ -14,8 +14,6 @@ class BooksController < ApplicationController
   def new
       @book = Book.find(params[:id])
   	  @book = Book.new
-      
-
   end
 
   def create
@@ -36,8 +34,8 @@ class BooksController < ApplicationController
   end
 
   def destroy
-    book = Book.find(params[:id])
-    book.destroy
+    @bookf = Book.find(params[:id])
+    @bookf.destroy
     redirect_to books_path
 end
 

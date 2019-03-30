@@ -5,12 +5,16 @@
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "email" %>
+
   </div>
 
   <div class="field">
     <%= f.label :name %> <br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: "name" %>
+    <!--  <% if @user.errors.any? %>
+     <p>Error! Enter the your name in 2~20 characters.</p>
+     <% end %> -->
   </div>
 
   <div class="field">
@@ -18,16 +22,16 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password", class: "password" %>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "password_confirm" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit 'sign up', class: "sign_up btn btn-default" %>
   </div>
 <% end %>
 
