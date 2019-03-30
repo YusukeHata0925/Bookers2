@@ -21,7 +21,7 @@
         <tr> 
           <td><%= attachment_image_tag book.user, :profile_image, :fill, 15, 15, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg", :size =>'50x50' %>
           </td>
-          <td><%= book.title %></td>
+          <td><%= link_to book.title, book_path(book) %></td>
           <td><%= book.opinion %></td>
         </tr>
       <% end %>
