@@ -2,7 +2,7 @@
 <div class="container">
  <div class="row">
      <div class="col-xs-3">
-        <%= render 'books/list', user: current_user %>
+        <%= render 'books/list', user: current_user, book: @book %>
      </div>
   <h1>Books</h1>
 
@@ -21,7 +21,7 @@
         <tr> 
           <td><%= attachment_image_tag book.user, :profile_image, :fill, 15, 15, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg", :size =>'50x50' %>
           </td>
-          <td><%= link_to book.title, book_path(book) %></td>
+          <td><%= link_to book.title, book_path(book),  class: "book_#{book.id}" %></td>
           <td><%= book.opinion %></td>
         </tr>
       <% end %>
