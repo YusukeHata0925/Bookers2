@@ -11,31 +11,34 @@
   </head>
 
   <body>
-    <header class="navbar navbar-fixed-top">
-      <div class="container">
-        <nav class="nav navbar-nav navbar-left">
-          <span>Bookers</span>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container-fluid">
+        <nav class="nav navbar-nav navbar-left navbar-dark">
+          <span class="text-muted"><h3>Bookers2</h3></span>
         </nav>
+
         <nav>
           <% if user_signed_in? %>
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-right navbar-left navbar-light bd-dark">
             <li><%= link_to ' Home', user_path(current_user), class: "home glyphicon glyphicon-home" %></li>
             <li><%= link_to ' User', users_path, class: "users glyphicon glyphicon-user" %></li>
             <li><%= link_to ' Books', books_path, class: "books glyphicon glyphicon-book" %></li>
             <li><%= link_to ' Logout', destroy_user_session_path,method: :delete, class: "logout glyphicon glyphicon-log-out" %></li>
           </ul>
-            <% else %>
+          <% else %>
+          
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to ' Home', root_path, class: "home glyphicon glyphicon-home" %></li>
             <li><%= link_to ' About', about_books_path, class: "about glyphicon glyphicon-link about" %></li>
             <li><%= link_to 'sign up', new_user_registration_path, class: "sign_up glyphicon glyphicon-edit sign_up" %></li>
             <li><%= link_to ' login',  new_user_session_path, class: "sign_in glyphicon glyphicon-log-in sign_in" %></li>
           </ul>
-            <% end %>
-          </ul>
-        </nav>
-      </div>
+          <% end %>
+
+       </div>
     </header>
+    <br>
+
     <%= yield %>
 
     <footer>

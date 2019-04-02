@@ -18,8 +18,8 @@
     	 	<td><%= @bookf.title %></td>
     	 	<td><%= @bookf.opinion %></td>
     	 	<% if @bookf.user == current_user %>
-    	 	<td><%= link_to "Edit", edit_book_path(@bookf.id), class: "edit_book_#{@bookf.id}" %> </td>
-    	 	<td><%= link_to "Destroy", book_path(@bookf.id), method: :delete, class: "destroy_book_#{@bookf.id}" %></td>
+    	 	<td><%= link_to "Edit", edit_book_path(@bookf.id), class: "edit_book_#{@bookf.id}, btn-success" %> </td>
+    	 	<td><%= link_to "Destroy", book_path(@bookf.id), method: :delete, class: "destroy_book_#{@bookf.id}, btn-danger" %></td>
     	 	<% end %>
     	 </tr>
     	</tbody>
