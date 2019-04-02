@@ -1,6 +1,15 @@
 <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= render "devise/shared/error_messages", resource: resource %>
+
+<% if notice %>
+　　<p><%= notice %></p>
+<% end %>
+<% if alert %>
+   <p><%= alert %></p>
+<% end %>
+
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name, autofocus: true, class: "name" %>
@@ -23,4 +32,4 @@
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%= render "devise/shared/links/" %>

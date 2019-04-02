@@ -23,11 +23,14 @@
             <li><%= link_to ' User', users_path, class: "users glyphicon glyphicon-user" %></li>
             <li><%= link_to ' Books', books_path, class: "books glyphicon glyphicon-book" %></li>
             <li><%= link_to ' Logout', destroy_user_session_path,method: :delete, class: "logout glyphicon glyphicon-log-out" %></li>
+          </ul>
             <% else %>
+          <ul class="nav navbar-nav navbar-right">
             <li><%= link_to ' Home', root_path, class: "home glyphicon glyphicon-home" %></li>
             <li><%= link_to ' About', about_books_path, class: "about glyphicon glyphicon-link about" %></li>
             <li><%= link_to 'sign up', new_user_registration_path, class: "sign_up glyphicon glyphicon-edit sign_up" %></li>
             <li><%= link_to ' login',  new_user_session_path, class: "sign_in glyphicon glyphicon-log-in sign_in" %></li>
+          </ul>
             <% end %>
           </ul>
         </nav>

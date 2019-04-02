@@ -5,13 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
          #:authentication_keys => [:username]
 
-  # validates :name, presence: true, uniqueness: true, length: { minimum: 4, maximum: 20 }
-  # validates :profile, presence: true, length: { maximum: 50 }
-  # validates_uniqueness_of :name
-  # validates_presence_of :name
-
-
-  validates :name, presence: true, length: { minimum: 4, maximum: 20 }
+  validates :name, presence: true, length: { minimum: 2, maximum: 20 }
+  validates :profile, length: { maximum: 50 }
   has_many :books, dependent: :destroy
   attachment :profile_image
 end

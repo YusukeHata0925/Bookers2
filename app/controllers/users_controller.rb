@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :correct_user, only: [:edit, :update]
 
   def index
       @users = User.all
@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def show
-  	  @user = User.find(params[:id])
+      @user = User.find(params[:id])
       @books = @user.books
       @book = Book.new
   end
@@ -18,11 +18,12 @@ class UsersController < ApplicationController
   end
 
   def edit
-  	  @user = User.find(params[:id])
+      @user = User.find(params[:id])
+
   end
 
   def update
-  	  @user = User.find(params[:id])
+      @user = User.find(params[:id])
       @user.update(user_params)
       redirect_to users_path(@user.id)
   end
@@ -31,9 +32,15 @@ class UsersController < ApplicationController
       redirect_to root_path
   end
 
-
-  private 
-  def user_params
+private
+   def user_params
     params.require(:user).permit(:name, :profile, :profile_image)
-  end
+   end
+
+   def correct_user
+      user = User.find(params[:id])
+      if current_user != user
+      redirect_to root_path
+      end
+   end
 end
