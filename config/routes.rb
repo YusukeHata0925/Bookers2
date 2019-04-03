@@ -13,10 +13,9 @@ Rails.application.routes.draw do
     get :about
     end
   end
-  # resources :post_images, only: [:new, :create, :index, :show, :destroy] do
+
   resource :favorites, only: [:create, :destroy] do
   resource :post_comments, only: [:new, :create, :index, :show, :destroy]
-
   end
   resources :users, only: [:index, :show, :edit, :update]
 end
