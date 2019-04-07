@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
 	before_action :authenticate_user!,only: [:create,:edit,:index]
-  before_action :correct_user, only: [:create, :edit, :update]
+  #before_action :correct_user, only: [:create, :edit, :update]
 
   def show
       @bookf = Book.find(params[:id])
@@ -53,10 +53,10 @@ private
       params.require(:book).permit(:title, :opinion)
     end
 
-    def correct_user
-      user = User.find(params[:id])
-      if current_user != user
-      redirect_to root_path
-      end
-    end
+    #def correct_user
+      #user = User.find(params[:id])
+      #if current_user != user
+      #redirect_to root_path
+      #end
+    #end
 end
