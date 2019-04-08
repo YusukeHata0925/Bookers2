@@ -13,7 +13,7 @@
     	<tbody>
     	 <tr>
     	 	　<td>
-            <%= attachment_image_tag @user, :profile_image, :fill, 250, 250, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg", :size =>'100x100' %>
+            <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg", :size =>'100x100' %>
           </td>
     	 	<td><%= @bookf.title %></td>
     	 	<td><%= @bookf.opinion %></td>
