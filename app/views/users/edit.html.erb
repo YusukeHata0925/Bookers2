@@ -15,11 +15,11 @@
                <%= attachment_image_tag @user, :profile_image, :fill, 300, 300, format: 'jpeg', class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg", :size =>'100x100' %>
              </div>
              <label class="control-label sr-only" for="inputEmail">ProfileImage</label>
-             <%= f.attachment_field :profile_image, placeholder: "選択されていません", class: "user_image, user-edit-form" %>
+             <%= f.attachment_field :profile_image, placeholder: "選択されていません", class: "user_image user-edit-form" %>
            </div>
 
         <h4><%= f.label :introduction %></h4>
-            <%= f.text_field :profile,  class: "introduction, 'form-control' " %>
+            <%= f.text_field :profile,  class: "introduction form-control" %>
 
             <%= f.submit "Update User", class:"btn btn-default" %>
 
