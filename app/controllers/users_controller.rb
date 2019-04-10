@@ -22,7 +22,7 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       @user.update(user_params)
       if @user.save
-        flash[:notice] = "your book was successfully!"
+        flash[:notice] = "Profile update was successfully!"
         redirect_to user_path(@user.id)
       else
         render :edit
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-      redirect_to root_path
+      redirect_to user_path
   end
 
 private

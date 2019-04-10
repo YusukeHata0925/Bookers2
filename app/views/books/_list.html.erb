@@ -3,14 +3,13 @@
    <div class="container">
     <div class="row">
      <div class="col-xs-3">
-
+         <p class="notice"><%= notice %></p>
          <h3>User Info</h3>
 
          <div>
 
-
-	        <div class="profile-container">
-            <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg", :size =>'100x100' %>
+          <div class="profile-container">
+            <%= attachment_image_tag user, :profile_image, :fill, 500, 500, format: 'jpg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg", :size =>'100x100' %>
           </div>
 
         <table class="table">

@@ -12,7 +12,7 @@
 
            <div class="form-group has-icon">
              <div class="user-edit-image">
-               <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg", :size =>'100x100' %>
+               <%= attachment_image_tag @user, :profile_image, :fill, 500, 500, format: 'jpeg', class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg", :size =>'100x100' %>
              </div>
              <label class="control-label sr-only" for="inputEmail">ProfileImage</label>
              <%= f.attachment_field :profile_image, placeholder: "選択されていません", class: "user_image user-edit-form" %>
